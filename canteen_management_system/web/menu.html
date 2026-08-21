@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu - College Canteen</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="brand">
+            <img src="images/canteen-logo.png" alt="Canteen Logo">
+            <div class="brand-text">
+                <h1>College Canteen</h1>
+                <p>Fresh Food Everyday</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a>
+            <a href="orders.html">My Orders</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- ================= PAGE BANNER ================= -->
+    <section class="page-banner">
+        <h2>Canteen Food Menu</h2>
+        <p>Select your favorite food items and add them to your cart</p>
+    </section>
+
+    <!-- ================= CONTROLS ================= -->
+    <div class="menu-controls-container">
+        <div class="search-box">
+            <input type="text" id="foodSearch" placeholder="Search food by name (e.g. Biriyani, Dosa)..." onkeyup="searchFood()">
+        </div>
+
+        <div class="category-filter">
+            <button class="filter-btn active" onclick="filterCategory('all', this)">All Items</button>
+            <button class="filter-btn" onclick="filterCategory('Rice', this)">Rice</button>
+            <button class="filter-btn" onclick="filterCategory('Noodles', this)">Noodles</button>
+            <button class="filter-btn" onclick="filterCategory('Snacks', this)">Snacks</button>
+            <button class="filter-btn" onclick="filterCategory('Breakfast', this)">Breakfast</button>
+        </div>
+    </div>
+
+    <!-- ================= FOOD GRID ================= -->
+    <main class="menu-section">
+        <div class="food-grid" id="foodGrid">
+            <!-- Dynamic food cards loaded by menu.js -->
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>&copy; College Canteen Management System - Student Ordering Portal</p>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>

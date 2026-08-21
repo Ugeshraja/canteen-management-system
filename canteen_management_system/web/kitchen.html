@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Dashboard - College Canteen</title>
+    <link rel="stylesheet" href="kitchen.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="kitchen-header">
+        <div class="brand">
+            <img src="images/canteen-logo.png" alt="Canteen Logo">
+            <div class="brand-text">
+                <h1>College Canteen Kitchen</h1>
+                <p>Live Order Preparation Desk</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <a href="index.html" class="nav-link">Main Site</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+            <span class="user-badge">👨‍🍳 Kitchen Staff</span>
+            <a href="login.html" class="btn-logout">Logout</a>
+        </div>
+    </header>
+
+    <!-- ================= DASHBOARD MAIN ================= -->
+    <main class="kitchen-main">
+        <div class="kitchen-title-bar">
+            <div>
+                <h2>Live Kitchen Orders</h2>
+                <p>Manage incoming student orders and update kitchen preparation status</p>
+            </div>
+            <div class="live-refresh-note">
+                ● Live Updates Active
+            </div>
+        </div>
+
+        <!-- 4 COLUMNS KANBAN BOARD -->
+        <div class="kitchen-columns-grid">
+
+            <!-- COLUMN 1: NEW / PENDING -->
+            <div class="kitchen-column">
+                <div class="column-header header-pending">
+                    <span>New Orders (Pending)</span>
+                    <span id="pendingCount" class="order-count-badge">0</span>
+                </div>
+                <div id="pendingOrders" class="column-orders-list">
+                    <!-- Orders injected by kitchen.js -->
+                </div>
+            </div>
+
+            <!-- COLUMN 2: PREPARING -->
+            <div class="kitchen-column">
+                <div class="column-header header-preparing">
+                    <span>Preparing Food</span>
+                    <span id="preparingCount" class="order-count-badge">0</span>
+                </div>
+                <div id="preparingOrders" class="column-orders-list">
+                    <!-- Orders injected by kitchen.js -->
+                </div>
+            </div>
+
+            <!-- COLUMN 3: READY -->
+            <div class="kitchen-column">
+                <div class="column-header header-ready">
+                    <span>Ready for Pickup</span>
+                    <span id="readyCount" class="order-count-badge">0</span>
+                </div>
+                <div id="readyOrders" class="column-orders-list">
+                    <!-- Orders injected by kitchen.js -->
+                </div>
+            </div>
+
+            <!-- COLUMN 4: COMPLETED -->
+            <div class="kitchen-column">
+                <div class="column-header header-completed">
+                    <span>Completed / Delivered</span>
+                    <span id="completedCount" class="order-count-badge">0</span>
+                </div>
+                <div id="completedOrders" class="column-orders-list">
+                    <!-- Orders injected by kitchen.js -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="kitchen.js"></script>
+</body>
+</html>

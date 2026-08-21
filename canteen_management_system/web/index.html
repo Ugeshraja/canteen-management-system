@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Canteen Management System</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="header">
+        <div class="brand">
+            <img src="images/canteen-logo.png" alt="College Canteen Logo">
+            <div class="brand-text">
+                <h1>College Canteen</h1>
+                <p>Fresh • Fast • Affordable</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a>
+            <a href="orders.html">My Orders</a>
+            <a href="kitchen.html">Kitchen</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html" class="nav-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to College Canteen</h2>
+            <p>Order delicious food online, skip long queues during break hours, and enjoy fresh meals on campus!</p>
+            <div class="hero-buttons">
+                <a href="menu.html" class="btn-primary">Order Food Now</a>
+                <a href="orders.html" class="btn-secondary">Track Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>Simple 3-step food ordering process for students & faculty</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">🍲</div>
+                <h3>1. Explore Menu</h3>
+                <p>Browse tasty breakfast, lunch, snacks, and noodles available freshly in the canteen.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🛒</div>
+                <h3>2. Add to Cart</h3>
+                <p>Select your favorite dishes, choose quantities, and place your order in seconds.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">⚡</div>
+                <h3>3. Pickup Fast</h3>
+                <p>Track live kitchen preparation status and pick up hot food without waiting in lines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= POPULAR DISHES ================= -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Today's Popular Specials</h2>
+            <p>Most loved meals by students today</p>
+        </div>
+
+        <div class="food-grid">
+            <!-- Card 1 -->
+            <div class="food-card">
+                <img src="images/chicken-biriyani.jpg" alt="Chicken Biriyani" class="food-card-img">
+                <div class="food-card-body">
+                    <span class="food-card-category">Rice</span>
+                    <h3 class="food-card-title">Chicken Biriyani</h3>
+                    <p class="food-card-desc">Flavourful chicken biriyani served with traditional spices.</p>
+                    <div class="food-card-footer">
+                        <span class="food-price">₹120</span>
+                        <a href="menu.html" class="btn-add">View Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="food-card">
+                <img src="images/chicken-noodles.jpg" alt="Chicken Noodles" class="food-card-img">
+                <div class="food-card-body">
+                    <span class="food-card-category">Noodles</span>
+                    <h3 class="food-card-title">Chicken Noodles</h3>
+                    <p class="food-card-desc">Fried noodles prepared with chicken and fresh vegetables.</p>
+                    <div class="food-card-footer">
+                        <span class="food-price">₹100</span>
+                        <a href="menu.html" class="btn-add">View Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="food-card">
+                <img src="images/parota.jpg" alt="Parota" class="food-card-img">
+                <div class="food-card-body">
+                    <span class="food-card-category">Snacks</span>
+                    <h3 class="food-card-title">Parota</h3>
+                    <p class="food-card-desc">Layered flaky flatbread served with hot veg/non-veg gravy.</p>
+                    <div class="food-card-footer">
+                        <span class="food-price">₹30</span>
+                        <a href="menu.html" class="btn-add">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>College Canteen</h3>
+                <p>Providing hygienic, delicious, and budget-friendly food to students and staff.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Food Menu</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="orders.html">Track Orders</a>
+            </div>
+            <div class="footer-col">
+                <h3>System Portals</h3>
+                <a href="kitchen.html">Kitchen Dashboard</a>
+                <a href="admin.html">Admin Portal</a>
+                <a href="login.html">User Login</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; College Canteen Management System - Academic Project.</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateIndexCartCount() {
+            var cart = JSON.parse(localStorage.getItem("canteenCart")) || [];
+            var total = 0;
+            for (var i = 0; i < cart.length; i++) {
+                total += cart[i].quantity;
+            }
+            var el = document.getElementById("cartCount");
+            if (el) el.innerText = total;
+        }
+        document.addEventListener("DOMContentLoaded", updateIndexCartCount);
+    </script>
+</body>
+</html>

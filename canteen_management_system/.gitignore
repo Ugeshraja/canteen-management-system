@@ -1,0 +1,10 @@
+# Java / Spring Boot
+target/
+*.class
+*.jar
+
+# NetBeans
+nbproject/private/
+build/
+dist/
+.nb-gradle/

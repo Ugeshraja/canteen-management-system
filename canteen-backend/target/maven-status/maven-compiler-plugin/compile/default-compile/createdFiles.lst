@@ -1,0 +1,12 @@
+com\canteen\controller\OrderController.class
+com\canteen\repository\FoodItemRepository.class
+com\canteen\model\Student.class
+com\canteen\controller\StudentController.class
+com\canteen\model\OrderItem.class
+com\canteen\repository\StudentRepository.class
+com\canteen\model\Order.class
+com\canteen\CanteenApplication.class
+com\canteen\model\FoodItem.class
+com\canteen\controller\FoodController.class
+com\canteen\repository\OrderRepository.class
+com\canteen\repository\OrderItemRepository.class

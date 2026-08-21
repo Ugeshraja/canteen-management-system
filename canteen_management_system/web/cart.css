@@ -1,0 +1,360 @@
+/*
+=====================================================
+ COLLEGE CANTEEN MANAGEMENT SYSTEM
+ Cart Page Stylesheet (cart.css)
+=====================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f7f8fa;
+    color: #333333;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand-text h1 {
+    font-size: 22px;
+    color: #d84315;
+}
+
+.brand-text p {
+    font-size: 12px;
+    color: #777777;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #444444;
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #f57c00;
+}
+
+.cart-badge {
+    background-color: #f57c00;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: 3px;
+}
+
+/* ================= PAGE BANNER ================= */
+.page-banner {
+    background-color: #fff3e0;
+    border-bottom: 1px solid #ffe0b2;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.page-banner h2 {
+    font-size: 28px;
+    color: #d84315;
+    margin-bottom: 6px;
+}
+
+.page-banner p {
+    color: #666666;
+    font-size: 15px;
+}
+
+/* ================= CART CONTAINER ================= */
+.cart-main {
+    max-width: 1100px;
+    margin: 30px auto 50px;
+    padding: 0 20px;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* ================= CART ITEMS ================= */
+.cart-items-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.cart-items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.cart-items-header h3 {
+    font-size: 20px;
+    color: #222222;
+}
+
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid #e0e0e0;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-category {
+    font-size: 11px;
+    color: #888888;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cart-item-title {
+    font-size: 16px;
+    color: #222222;
+    margin: 2px 0 4px;
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: #666666;
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #cccccc;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.qty-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.qty-number {
+    font-size: 15px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.cart-item-total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d84315;
+    min-width: 80px;
+    text-align: right;
+}
+
+.btn-remove {
+    background-color: transparent;
+    color: #e53935;
+    border: 1px solid #ffcdd2;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-remove:hover {
+    background-color: #ffebee;
+}
+
+/* ================= EMPTY CART ================= */
+.empty-cart-view {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.empty-cart-icon {
+    font-size: 55px;
+    color: #ff9800;
+    margin-bottom: 15px;
+}
+
+.empty-cart-view h3 {
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.empty-cart-view p {
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.btn-menu-redirect {
+    background-color: #f57c00;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-menu-redirect:hover {
+    background-color: #e65100;
+}
+
+/* ================= ORDER SUMMARY ================= */
+.order-summary-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    height: fit-content;
+}
+
+.order-summary-box h3 {
+    font-size: 20px;
+    color: #222222;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+.summary-row.total-row {
+    font-size: 19px;
+    font-weight: bold;
+    color: #222222;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.summary-row.total-row .total-amount {
+    color: #d84315;
+}
+
+.student-info-note {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 13px;
+    color: #2e7d32;
+    margin: 20px 0;
+}
+
+.btn-place-order {
+    width: 100%;
+    background-color: #f57c00;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-place-order:hover {
+    background-color: #e65100;
+}
+
+.continue-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #f57c00;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.continue-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item-row {
+        flex-wrap: wrap;
+    }
+}

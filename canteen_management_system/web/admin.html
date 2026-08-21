@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - College Canteen</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- ================= ADMIN HEADER ================= -->
+    <header class="admin-header">
+        <div class="brand">
+            <img src="images/canteen-logo.png" alt="Canteen Logo">
+            <div class="brand-text">
+                <h2>College Canteen</h2>
+                <span>Administrator Panel</span>
+            </div>
+        </div>
+
+        <div class="admin-header-right">
+            <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>
+        </div>
+    </header>
+
+    <!-- ================= ADMIN NAVIGATION ================= -->
+    <nav class="admin-nav">
+        <a href="admin.html" class="active">Dashboard & Operations</a>
+        <a href="kitchen.html">Kitchen View</a>
+        <a href="menu.html">Student Menu</a>
+        <a href="index.html">Main Site</a>
+    </nav>
+
+    <!-- ================= ADMIN MAIN ================= -->
+    <main class="admin-main">
+        <div class="page-title-row">
+            <h1>Canteen Administrator Dashboard</h1>
+            <p>Manage canteen menu items, monitor student orders, and update order statuses.</p>
+        </div>
+
+        <!-- ================= STATS SUMMARY ================= -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-info">
+                    <h3 id="statTotalRevenue">₹0</h3>
+                    <p>Total Revenue</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
+                <div class="stat-info">
+                    <h3 id="statTotalOrders">0</h3>
+                    <p>Total Orders Placed</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🍲</div>
+                <div class="stat-info">
+                    <h3 id="statActiveMenu">0</h3>
+                    <p>Active Menu Items</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <h3 id="statPendingOrders">0</h3>
+                    <p>Pending Orders</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SECTION 1: MENU MANAGEMENT ================= -->
+        <section class="admin-section">
+            <div class="section-header-bar">
+                <h2>🍲 Menu Management (Add / Update / Delete)</h2>
+                <button type="button" class="btn-add-food" onclick="showAddFoodForm()">+ Add New Food Item</button>
+            </div>
+
+            <!-- ADD / EDIT FORM -->
+            <div id="foodFormCard" class="form-card" style="display: none;">
+                <h3 id="formTitle">Add New Food Item</h3>
+                <form id="foodForm">
+                    <input type="hidden" id="editFoodId" value="">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="foodName">Food Name *</label>
+                            <input type="text" id="foodName" placeholder="e.g. Paneer Biriyani" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foodCategory">Category *</label>
+                            <select id="foodCategory" required>
+                                <option value="Rice">Rice</option>
+                                <option value="Noodles">Noodles</option>
+                                <option value="Snacks">Snacks</option>
+                                <option value="Breakfast">Breakfast</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foodPrice">Price (₹) *</label>
+                            <input type="number" id="foodPrice" min="1" step="1" placeholder="e.g. 90" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foodImage">Food Image *</label>
+                            <select id="foodImage" required>
+                                <option value="images/chicken-biriyani.jpg">Chicken Biriyani</option>
+                                <option value="images/chicken-noodles.jpg">Chicken Noodles</option>
+                                <option value="images/chicken-rice.jpg">Chicken Rice</option>
+                                <option value="images/parota.jpg">Parota</option>
+                                <option value="images/kothu-parota.jpg">Kothu Parota</option>
+                                <option value="images/dosa.jpg">Dosa</option>
+                                <option value="images/veg-puffs.jpg">Veg Puffs</option>
+                                <option value="images/egg-puffs.jpg">Egg Puffs</option>
+                                <option value="images/chicken-puffs.jpg">Chicken Puffs</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="foodDescription">Description *</label>
+                            <textarea id="foodDescription" rows="2" placeholder="Short description of the food item..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foodAvailability">Availability</label>
+                            <select id="foodAvailability">
+                                <option value="true">In Stock (Available)</option>
+                                <option value="false">Out of Stock</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Save Food Item</button>
+                        <button type="button" class="btn-cancel" onclick="cancelFoodForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- MENU TABLE -->
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Food Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="menuTableBody">
+                        <!-- Loaded dynamically by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2: ORDER MANAGEMENT ================= -->
+        <section class="admin-section">
+            <div class="section-header-bar">
+                <h2>📋 Student Orders Management</h2>
+                <div>
+                    <label for="statusFilter"><strong>Filter: </strong></label>
+                    <select id="statusFilter" class="status-select" onchange="renderOrdersTable()">
+                        <option value="All">All Orders</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Preparing">Preparing</option>
+                        <option value="Ready">Ready</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Student Name</th>
+                            <th>Food Items</th>
+                            <th>Total Amount</th>
+                            <th>Order Time</th>
+                            <th>Change Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                        <!-- Loaded dynamically by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

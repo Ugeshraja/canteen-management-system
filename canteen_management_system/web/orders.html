@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - College Canteen</title>
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="brand">
+            <img src="images/canteen-logo.png" alt="Canteen Logo">
+            <div class="brand-text">
+                <h1>College Canteen</h1>
+                <p>Fresh Food Everyday</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a>
+            <a href="orders.html" class="active">My Orders</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- ================= PAGE BANNER ================= -->
+    <section class="page-banner">
+        <h2>Order Status & History</h2>
+        <p>Track your food preparation status in real-time</p>
+    </section>
+
+    <!-- ================= ORDERS CONTAINER ================= -->
+    <main class="orders-container">
+
+        <!-- EMPTY ORDERS VIEW -->
+        <div id="emptyOrdersView" class="empty-orders-view" style="display: none;">
+            <div class="empty-icon">📋</div>
+            <h3>No Orders Found</h3>
+            <p>You have not placed any food orders yet.</p>
+            <a href="menu.html" class="btn-order-now">Order Delicious Food</a>
+        </div>
+
+        <!-- ORDERS LIST -->
+        <div class="orders-grid" id="ordersContainer">
+            <!-- Dynamic order cards loaded by orders.js -->
+        </div>
+
+    </main>
+
+    <script src="orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+/*
+=====================================================
+ COLLEGE CANTEEN MANAGEMENT SYSTEM
+ Kitchen Dashboard Stylesheet (kitchen.css)
+=====================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333333;
+}
+
+/* ================= HEADER ================= */
+.kitchen-header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 3%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand-text h1 {
+    font-size: 20px;
+    color: #ff9800;
+}
+
+.brand-text p {
+    font-size: 11px;
+    color: #bdc3c7;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-badge {
+    background-color: #34495e;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #ecf0f1;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #34495e;
+}
+
+.btn-logout {
+    background-color: #e74c3c;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+
+/* ================= DASHBOARD MAIN ================= */
+.kitchen-main {
+    padding: 25px 3%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.kitchen-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.kitchen-title-bar h2 {
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.kitchen-title-bar p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.live-refresh-note {
+    font-size: 13px;
+    color: #27ae60;
+    font-weight: bold;
+    background-color: #e8f8f5;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #a3e4d7;
+}
+
+/* ================= KITCHEN BOARD COLUMNS ================= */
+.kitchen-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.kitchen-column {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #dfe4ea;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.column-header {
+    padding: 15px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.header-pending {
+    background-color: #e67e22;
+}
+
+.header-preparing {
+    background-color: #2980b9;
+}
+
+.header-ready {
+    background-color: #27ae60;
+}
+
+.header-completed {
+    background-color: #7f8c8d;
+}
+
+.order-count-badge {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.column-orders-list {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ================= KITCHEN ORDER CARD ================= */
+.kitchen-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #bdc3c7;
+}
+
+.card-pending {
+    border-left-color: #e67e22;
+}
+
+.card-preparing {
+    border-left-color: #2980b9;
+}
+
+.card-ready {
+    border-left-color: #27ae60;
+}
+
+.card-completed {
+    border-left-color: #7f8c8d;
+    opacity: 0.85;
+}
+
+.kitchen-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.kitchen-order-id {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.kitchen-student-name {
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+.kitchen-time {
+    font-size: 11px;
+    color: #95a5a6;
+}
+
+.kitchen-items-list {
+    list-style-type: none;
+    margin-bottom: 12px;
+}
+
+.kitchen-items-list li {
+    font-size: 14px;
+    color: #333333;
+    padding: 3px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.kitchen-items-list li .item-qty {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.kitchen-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+.kitchen-order-total {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.btn-kitchen-action {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.btn-start-prep {
+    background-color: #2980b9;
+}
+
+.btn-start-prep:hover {
+    background-color: #1f618d;
+}
+
+.btn-mark-ready {
+    background-color: #27ae60;
+}
+
+.btn-mark-ready:hover {
+    background-color: #219653;
+}
+
+.btn-mark-complete {
+    background-color: #7f8c8d;
+}
+
+.btn-mark-complete:hover {
+    background-color: #616a6b;
+}
+
+.no-orders-note {
+    text-align: center;
+    color: #95a5a6;
+    font-size: 13px;
+    padding: 30px 10px;
+    font-style: italic;
+}

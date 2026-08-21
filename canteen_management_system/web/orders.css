@@ -1,0 +1,244 @@
+/*
+=====================================================
+ COLLEGE CANTEEN MANAGEMENT SYSTEM
+ Student Orders Page Stylesheet (orders.css)
+=====================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f7f8fa;
+    color: #333333;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand-text h1 {
+    font-size: 22px;
+    color: #d84315;
+}
+
+.brand-text p {
+    font-size: 12px;
+    color: #777777;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #444444;
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #f57c00;
+}
+
+.cart-badge {
+    background-color: #f57c00;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: 3px;
+}
+
+/* ================= PAGE BANNER ================= */
+.page-banner {
+    background-color: #fff3e0;
+    border-bottom: 1px solid #ffe0b2;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.page-banner h2 {
+    font-size: 28px;
+    color: #d84315;
+    margin-bottom: 6px;
+}
+
+.page-banner p {
+    color: #666666;
+    font-size: 15px;
+}
+
+/* ================= ORDERS CONTAINER ================= */
+.orders-container {
+    max-width: 950px;
+    margin: 30px auto 50px;
+    padding: 0 20px;
+}
+
+.orders-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.order-id-info h3 {
+    font-size: 18px;
+    color: #222222;
+    margin-bottom: 3px;
+}
+
+.order-date {
+    font-size: 13px;
+    color: #888888;
+}
+
+/* ================= STATUS BADGES ================= */
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-pending,
+.status-placed {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffe0b2;
+}
+
+.status-preparing {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #bbdefb;
+}
+
+.status-ready {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.status-completed {
+    background-color: #ede7f6;
+    color: #512da8;
+    border: 1px solid #d1c4e9;
+}
+
+/* ================= ORDER ITEMS LIST ================= */
+.order-items-list {
+    margin-bottom: 15px;
+}
+
+.order-item-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 6px 0;
+    color: #444444;
+}
+
+.order-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eeeeee;
+    padding-top: 12px;
+    margin-top: 10px;
+}
+
+.order-total-amount {
+    font-size: 17px;
+    font-weight: bold;
+    color: #d84315;
+}
+
+.empty-orders-view {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 60px 20px;
+}
+
+.empty-icon {
+    font-size: 50px;
+    color: #ff9800;
+    margin-bottom: 15px;
+}
+
+.empty-orders-view h3 {
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.empty-orders-view p {
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.btn-order-now {
+    background-color: #f57c00;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-order-now:hover {
+    background-color: #e65100;
+}

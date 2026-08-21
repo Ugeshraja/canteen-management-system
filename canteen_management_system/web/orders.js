@@ -6,7 +6,8 @@
 =====================================================
 */
 
-var BACKEND_ORDER_URL = "http://localhost:8080/api/orders";
+var BACKEND_ORDER_URL =
+    "https://canteen-management-system-s4gw.onrender.com/api/orders";
 
 // Function to fetch orders from backend
 function fetchOrdersFromBackend() {

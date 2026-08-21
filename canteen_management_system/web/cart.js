@@ -6,7 +6,7 @@
 =====================================================
 */
 
-var BACKEND_ORDER_URL = "http://localhost:8080/api/orders";
+var BACKEND_ORDER_URL = "https://canteen-management-system-s4gw.onrender.com/api/orders";
 var CART_KEY = "canteenCart";
 var TAX_RATE = 0.05; // 5% tax
 

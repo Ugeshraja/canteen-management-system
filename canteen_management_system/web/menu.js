@@ -6,7 +6,7 @@
 =====================================================
 */
 
-var BACKEND_URL = "http://localhost:8080/api/foods";
+var BACKEND_URL = "https://canteen-management-system-s4gw.onrender.com/api/foods";
 var foodItemsList = [];
 var currentCategory = "all";
 

@@ -6,8 +6,11 @@
 =====================================================
 */
 
-var BACKEND_FOODS_URL = "http://localhost:8080/api/foods";
-var BACKEND_ORDERS_URL = "http://localhost:8080/api/orders";
+var BACKEND_FOODS_URL =
+    "https://canteen-management-system-s4gw.onrender.com/api/foods";
+
+var BACKEND_ORDERS_URL =
+    "https://canteen-management-system-s4gw.onrender.com/api/orders";
 
 var currentAdminFoods = [];
 var currentAdminOrders = [];

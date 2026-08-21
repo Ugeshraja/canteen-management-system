@@ -6,7 +6,7 @@
 =====================================================
 */
 
-var BACKEND_URL = "http://localhost:8080/api";
+var BACKEND_URL = "https://canteen-management-system-s4gw.onrender.com/api";
 
 function loginUser(event) {
     event.preventDefault();

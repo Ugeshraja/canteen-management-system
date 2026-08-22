@@ -215,7 +215,7 @@ function placeOrder() {
     })
     .catch(function(error) {
         console.error("Order error:", error);
-        alert("Could not place order: " + error.message + "\n(Please make sure Spring Boot is running on port 8080)");
+        alert("Could not place order: Unable to connect to the server. Please try again.");
     });
 }
 

@@ -334,8 +334,21 @@ function changeAdminOrderStatus(orderId, newStatus) {
     .catch(function(err) { alert("Error: " + err.message); });
 }
 
+function checkAdminAuth() {
+    var loggedIn = localStorage.getItem("loggedIn") === "true";
+    var userType = localStorage.getItem("userType");
+    if (!loggedIn || userType !== "admin") {
+        alert("Access Denied. Please login as Administrator.");
+        window.location.href = "login.html";
+        return false;
+    }
+    return true;
+}
+
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", function() {
+    if (!checkAdminAuth()) return;
+
     loadAdminDashboard();
 
     var form = document.getElementById("foodForm");

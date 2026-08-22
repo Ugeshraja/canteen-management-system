@@ -29,8 +29,8 @@ function loadMenuFromBackend() {
             if (container) {
                 container.innerHTML = 
                     '<div class="no-items-message">' +
-                        '<h3>Backend Not Connected</h3>' +
-                        '<p>Please start the Spring Boot backend on port 8080 to view the menu items from MySQL database.</p>' +
+                        '<h3>Unable to Load Menu</h3>' +
+                        '<p>Unable to connect to the server. Please try again.</p>' +
                     '</div>';
             }
         });

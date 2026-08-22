@@ -146,7 +146,20 @@ function updateOrderStatus(orderId, newStatus) {
     });
 }
 
+function checkKitchenAuth() {
+    var loggedIn = localStorage.getItem("loggedIn") === "true";
+    var userType = localStorage.getItem("userType");
+    if (!loggedIn || userType !== "kitchen") {
+        alert("Access Denied. Please login as Kitchen Staff.");
+        window.location.href = "login.html";
+        return false;
+    }
+    return true;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+    if (!checkKitchenAuth()) return;
+
     fetchKitchenOrders();
     // Auto-refresh every 8 seconds for live kitchen updates
     setInterval(fetchKitchenOrders, 8000);

@@ -37,7 +37,7 @@ function fetchOrdersFromBackend() {
                     '<div class="empty-orders-view">' +
                         '<div class="empty-icon">⚠️</div>' +
                         '<h3>Could Not Load Orders</h3>' +
-                        '<p>Please ensure the Spring Boot backend server is running on port 8080.</p>' +
+                        '<p>Unable to connect to the server. Please try again.</p>' +
                     '</div>';
             }
         });
